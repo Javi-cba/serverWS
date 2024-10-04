@@ -31,6 +31,10 @@ const sendClientList = () => {
   });
 };
 
+app.get('/', (req, res) => {
+  res.send('<h1>WebSocket Server Listo</h1>');
+});
+
 app.post('/send-message', (req, res) => {
   const { message, clientId } = req.body;
   if (!message || !clientId) {
